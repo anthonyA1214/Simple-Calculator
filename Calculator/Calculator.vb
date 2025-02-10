@@ -27,51 +27,16 @@
 		End If
 	End Sub
 
-	Private Sub btnPlus_Click(sender As Object, e As EventArgs) Handles btnPlus.Click
+	Private Sub btnOperators_Click(sender As Object, e As EventArgs) Handles btnPlus.Click, btnMultiply.Click, btnMinus.Click, btnDivide.Click
+		Dim btn As Guna.UI2.WinForms.Guna2Button = CType(sender, Guna.UI2.WinForms.Guna2Button)
 		If operatorr = "" Then
 			num1 = Double.Parse(txtBox.Text)
-			operatorr = "+"
-			txtBox2.Text = num1 & " + "
+			operatorr = btn.Text
+			txtBox2.Text = num1 & " " & btn.Text & " "
 			txtBox.Text = "0"
 		Else
-			operatorr = "+"
-			txtBox2.Text = num1 & " + "
-		End If
-	End Sub
-
-	Private Sub btnMinus_Click(sender As Object, e As EventArgs) Handles btnMinus.Click
-		If operatorr = "" Then
-			num1 = Double.Parse(txtBox.Text)
-			operatorr = "-"
-			txtBox2.Text = num1 & " - "
-			txtBox.Text = "0"
-		Else
-			operatorr = "-"
-			txtBox2.Text = num1 & " - "
-		End If
-	End Sub
-
-	Private Sub btnMultiply_Click(sender As Object, e As EventArgs) Handles btnMultiply.Click
-		If operatorr = "" Then
-			num1 = Double.Parse(txtBox.Text)
-			operatorr = "*"
-			txtBox2.Text = num1 & " * "
-			txtBox.Text = "0"
-		Else
-			operatorr = "*"
-			txtBox2.Text = num1 & " * "
-		End If
-	End Sub
-
-	Private Sub btnDivide_Click(sender As Object, e As EventArgs) Handles btnDivide.Click
-		If operatorr = "" Then
-			num1 = Double.Parse(txtBox.Text)
-			operatorr = "/"
-			txtBox2.Text = num1 & " / "
-			txtBox.Text = "0"
-		Else
-			operatorr = "/"
-			txtBox2.Text = num1 & " / "
+			operatorr = btn.Text
+			txtBox2.Text = num1 & " " & btn.Text & " "
 		End If
 	End Sub
 
@@ -94,83 +59,12 @@
 		End If
 	End Sub
 
-	Private Sub btn0_Click(sender As Object, e As EventArgs) Handles btn0.Click
+	Private Sub btnNums_Click(sender As Object, e As EventArgs) Handles btn0.Click, btn1.Click, btn9.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click
+		Dim btn As Guna.UI2.WinForms.Guna2Button = CType(sender, Guna.UI2.WinForms.Guna2Button)
 		If txtBox.Text = "0" Then
-			txtBox.Text = "0"
+			txtBox.Text = btn.Text
 		Else
-			txtBox.Text += "0"
-		End If
-	End Sub
-
-	Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "1"
-		Else
-			txtBox.Text += "1"
-		End If
-	End Sub
-
-	Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "2"
-		Else
-			txtBox.Text += "2"
-		End If
-	End Sub
-
-	Private Sub btn3_Click(sender As Object, e As EventArgs) Handles btn3.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "3"
-		Else
-			txtBox.Text += "3"
-		End If
-	End Sub
-
-	Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "4"
-		Else
-			txtBox.Text += "4"
-		End If
-	End Sub
-
-	Private Sub btn5_Click(sender As Object, e As EventArgs) Handles btn5.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "5"
-		Else
-			txtBox.Text += "5"
-		End If
-	End Sub
-
-	Private Sub btn6_Click(sender As Object, e As EventArgs) Handles btn6.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "6"
-		Else
-			txtBox.Text += "6"
-		End If
-	End Sub
-
-	Private Sub btn7_Click(sender As Object, e As EventArgs) Handles btn7.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "7"
-		Else
-			txtBox.Text += "7"
-		End If
-	End Sub
-
-	Private Sub btn8_Click(sender As Object, e As EventArgs) Handles btn8.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "8"
-		Else
-			txtBox.Text += "8"
-		End If
-	End Sub
-
-	Private Sub btn9_Click(sender As Object, e As EventArgs) Handles btn9.Click
-		If txtBox.Text = "0" Then
-			txtBox.Text = "9"
-		Else
-			txtBox.Text += "9"
+			txtBox.Text += btn.Text
 		End If
 	End Sub
 

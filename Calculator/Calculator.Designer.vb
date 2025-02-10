@@ -300,8 +300,7 @@ Partial Class Calculator
 		Me.btnMultiply.Name = "btnMultiply"
 		Me.btnMultiply.Size = New System.Drawing.Size(65, 65)
 		Me.btnMultiply.TabIndex = 16
-		Me.btnMultiply.Text = " ×"
-		Me.btnMultiply.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+		Me.btnMultiply.Text = "*"
 		'
 		'btnDivide
 		'
@@ -317,7 +316,7 @@ Partial Class Calculator
 		Me.btnDivide.Name = "btnDivide"
 		Me.btnDivide.Size = New System.Drawing.Size(65, 65)
 		Me.btnDivide.TabIndex = 17
-		Me.btnDivide.Text = "÷"
+		Me.btnDivide.Text = "/"
 		'
 		'btnBack
 		'
