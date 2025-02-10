@@ -140,7 +140,7 @@ Partial Class Calculator
 		Me.btnMinus.Name = "btnMinus"
 		Me.btnMinus.Size = New System.Drawing.Size(65, 65)
 		Me.btnMinus.TabIndex = 5
-		Me.btnMinus.Text = "-"
+		Me.btnMinus.Text = "−"
 		'
 		'btn3
 		'
@@ -300,7 +300,7 @@ Partial Class Calculator
 		Me.btnMultiply.Name = "btnMultiply"
 		Me.btnMultiply.Size = New System.Drawing.Size(65, 65)
 		Me.btnMultiply.TabIndex = 16
-		Me.btnMultiply.Text = "*"
+		Me.btnMultiply.Text = "∗"
 		'
 		'btnDivide
 		'

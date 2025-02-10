@@ -1,16 +1,16 @@
 ﻿Public Class Calculator
-	Public num1 As Double
-	Public num2 As Double
-	Public result As Double
-	Public operatorr As String = ""
+	Private num1 As Double
+	Private num2 As Double
+	Private result As Double
+	Private operatorr As String = ""
 
-	Public Sub Operation()
+	Private Sub Operation()
 		Select Case operatorr
 			Case "+"
 				result = num1 + num2
-			Case "-"
+			Case "−"
 				result = num1 - num2
-			Case "*"
+			Case "∗"
 				result = num1 * num2
 			Case "/"
 				result = num1 / num2
@@ -41,9 +41,7 @@
 	End Sub
 
 	Private Sub btnAllClear_Click(sender As Object, e As EventArgs) Handles btnAllClear.Click
-		num1 = 0
-		num2 = 0
-		result = 0
+		num1 = num2 = result = 0
 		operatorr = ""
 		txtBox.Text = "0"
 		txtBox2.Clear()
@@ -61,7 +59,7 @@
 
 	Private Sub btnNums_Click(sender As Object, e As EventArgs) Handles btn0.Click, btn1.Click, btn9.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click
 		Dim btn As Guna.UI2.WinForms.Guna2Button = CType(sender, Guna.UI2.WinForms.Guna2Button)
-		If txtBox.Text = "0" Then
+		If txtBox.Text = "0" OrElse txtBox.Text = result Then
 			txtBox.Text = btn.Text
 		Else
 			txtBox.Text += btn.Text
@@ -69,6 +67,10 @@
 	End Sub
 
 	Private Sub btnDot_Click(sender As Object, e As EventArgs) Handles btnDot.Click
+		If txtBox.Text = result Then
+			Return
+		End If
+
 		If Not txtBox.Text.Contains(".") Then
 			txtBox.Text += "."
 		End If
