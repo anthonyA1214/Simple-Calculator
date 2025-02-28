@@ -3,8 +3,10 @@
 	Private num2 As Double
 	Private result As Double
 	Private operatorr As String = ""
-
 	Private Sub Operation()
+		If operatorr <> "" Then
+			num2 = Double.Parse(txtBox.Text)
+		End If
 		Select Case operatorr
 			Case "+"
 				result = num1 + num2
@@ -15,29 +17,29 @@
 			Case "/"
 				result = num1 / num2
 		End Select
+		txtBox.Text = result.ToString()
+		txtBox2.Text = num1 & " " & operatorr & " " & num2 & " = " & result
 	End Sub
 
 	Private Sub btnEqual_Click(sender As Object, e As EventArgs) Handles btnEqual.Click
 		If operatorr <> "" Then
-			num2 = Double.Parse(txtBox.Text)
 			Operation()
-			txtBox.Text = result.ToString()
-			txtBox2.Text = num1 & " " & operatorr & " " & num2 & " = " & result
 			operatorr = ""
 		End If
 	End Sub
 
 	Private Sub btnOperators_Click(sender As Object, e As EventArgs) Handles btnPlus.Click, btnMultiply.Click, btnMinus.Click, btnDivide.Click
 		Dim btn As Guna.UI2.WinForms.Guna2Button = CType(sender, Guna.UI2.WinForms.Guna2Button)
-		If operatorr = "" Then
-			num1 = Double.Parse(txtBox.Text)
-			operatorr = btn.Text
-			txtBox2.Text = num1 & " " & btn.Text & " "
-			txtBox.Text = "0"
+		If operatorr <> "" Then
+			Operation()
+			num1 = result
 		Else
-			operatorr = btn.Text
-			txtBox2.Text = num1 & " " & btn.Text & " "
+			num1 = Double.Parse(txtBox.Text)
 		End If
+
+		operatorr = btn.Text
+		txtBox2.Text = num1 & " " & btn.Text & " "
+		txtBox.Text = "0"
 	End Sub
 
 	Private Sub btnAllClear_Click(sender As Object, e As EventArgs) Handles btnAllClear.Click
